@@ -62,11 +62,11 @@ html {
 
 .carousel-inner {
   border-radius: 50px !important;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 .carousel-item {
-  height: 700px; /* Stel hier de gewenste vaste hoogte in */
+  height: 800px; /* Stel hier de gewenste vaste hoogte in */
 }
 .carousel-item img {
   object-fit: cover;
@@ -79,4 +79,45 @@ html {
 
 .carousel {
   position: relative;
+}
+
+.letter {
+  display: inline;
+  visibility: hidden; /* Zorg ervoor dat de letters aanvankelijk verborgen zijn */
+}
+
+.letter.show {
+  visibility: visible; /* Maak de letters zichtbaar wanneer ze moeten worden getoond */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0; /* make things invisible upon start */
+  animation: fadeIn ease-in 1s forwards;
+  animation-delay: 4.5s; /* voeg een vertraging toe van 4 seconden */
+}
+
+#animatedText3 {
+  visibility: hidden; /* Verberg de tekst in eerste instantie */
+}
+
+#animatedText3 .letter.show {
+  visibility: visible; /* Zorg ervoor dat de letters zichtbaar worden als de 'show' klasse wordt toegevoegd */
+}
+
+#clickHeartRow {
+  opacity: 0; /* Verberg het element door de opacity op 0 te zetten */
+  transition: opacity 1s ease; /* Voeg een overgang toe voor een vloeiende zichtbaarheid */
+}
+
+#clickHeartRow.visible {
+  opacity: 1; /* Maak het element zichtbaar */
 }
